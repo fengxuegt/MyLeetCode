@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=111 lang=cpp
+ * @lc app=leetcode.cn id=222 lang=cpp
  *
- * [111] 二叉树的最小深度
+ * [222] 完全二叉树的节点个数
  */
 
 // @lc code=start
@@ -18,8 +18,11 @@
  */
 class Solution {
 public:
-    int minDepth(TreeNode* root) {
-        return 0;
+    int countNodes(TreeNode* root) {
+        if (root == nullptr) {
+            return 0;
+        }
+        return countNodes(root->left) + countNodes(root->right) + 1;
     }
 };
 // @lc code=end
