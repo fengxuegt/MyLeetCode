@@ -19,7 +19,14 @@
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
-
+        if (root == nullptr) {
+            return targetSum == 0;
+        }
+        if (root->val == targetSum) {
+            return true;
+        }
+        return hasPathSum(root->left, targetSum - root->val) 
+        || hasPathSum(root->right, targetSum - root->val);
     }
 };
 // @lc code=end
